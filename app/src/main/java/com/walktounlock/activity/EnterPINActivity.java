@@ -81,7 +81,7 @@ public class EnterPINActivity extends AppCompatActivity {
 
         }
 
-        user=databaseHandler.getUser(sessionManager.getName());
+        user=databaseHandler.getUser("kanwal");
         editTextPin=(EditText) findViewById(R.id.editText_pin);
         button=(Button) findViewById(R.id.button_submit);
         button.setOnClickListener(new View.OnClickListener() {
@@ -89,6 +89,7 @@ public class EnterPINActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 pin=editTextPin.getText().toString();
+                String pintemp = user.getPin();
                 if(user.getPin().equals(pin)){
                     if(key==1) {
                         startActivity(getPackageManager().getLaunchIntentForPackage(packagename));

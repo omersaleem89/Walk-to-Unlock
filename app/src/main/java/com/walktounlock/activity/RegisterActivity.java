@@ -1,6 +1,7 @@
 package com.walktounlock.activity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
@@ -16,8 +17,14 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.StringRequest;
+//import com.google.gson.Gson;
 import com.walktounlock.R;
 import com.walktounlock.manager.AppController;
+import com.walktounlock.manager.SessionManager;
+import com.walktounlock.model.User;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 public class RegisterActivity extends AppCompatActivity {
     EditText editText_email;
@@ -26,6 +33,8 @@ public class RegisterActivity extends AppCompatActivity {
     EditText editText_pin;
     Button button;
     ProgressBar progressBar;
+    SessionManager sessionManager;
+    SharedPreferences preferences;
 
     @Override
     public boolean onSupportNavigateUp() {
@@ -40,6 +49,8 @@ public class RegisterActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setTitle("Register User");
+        sessionManager=new SessionManager(this);
+        preferences = this.getSharedPreferences("register",0);
 
         editText_email=(EditText) findViewById(R.id.editText_reg_email);
         editText_name=(EditText) findViewById(R.id.editText_reg_name);
@@ -53,43 +64,61 @@ public class RegisterActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                progressBar.setVisibility(View.VISIBLE);
-                String  tag_string_req = "string_req";
+                //progressBar.setVisibility(View.VISIBLE);
+                User user = new User();
+                user.setName(editText_name.getText().toString());
+                user.setEmail(editText_email.getText().toString());
+                user.setPassword(editText_pass.getText().toString());
+                user.setPin(editText_pin.getText().toString());
+                sessionManager.setLogin(true, "register");
 
-                String url = "https://www.zainfabricspk.com/fyp/reg.php";
-                StringRequest strReq = new StringRequest(Request.Method.GET,
-                        url+"?username="+editText_name.getText().toString()
-                                +"&email="+editText_email.getText().toString()
-                                +"&pass="+editText_pass.getText().toString()
-                                +"&pin="+editText_pin.getText().toString(), new Response.Listener<String>() {
+                SharedPreferences.Editor prefsEditor = preferences.edit();
 
-                    @Override
-                    public void onResponse(String response) {
-
-                            if(response.equals("1")){
-                                Toast.makeText(RegisterActivity.this, "Registration Successful", Toast.LENGTH_SHORT).show();
+                Toast.makeText(RegisterActivity.this, "Registration Successful", Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(getApplicationContext(),LoginActivity.class));
                                 finish();
-                            }
-                        progressBar.setVisibility(View.GONE);
 
+//                Gson gson = new Gson();
+//                String json = gson.toJson(user);
+//                prefsEditor.putString(user.getName(), json);
+//                prefsEditor.commit();
 
-                        Log.d("Login response: ", response.toString());
-//                        pDialog.hide();
-
-                    }
-                }, new Response.ErrorListener() {
-
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        VolleyLog.d("Error: " , error.getMessage());
-                        progressBar.setVisibility(View.GONE);
-//                        pDialog.hide();
-                    }
-                });
-
-// Adding request to request queue
-                AppController.getInstance().addToRequestQueue(strReq, tag_string_req);
+//                String  tag_string_req = "string_req";
+//
+//                String url = "https://www.zainfabricspk.com/fyp/reg.php";
+//                StringRequest strReq = new StringRequest(Request.Method.GET,
+//                        url+"?username="+editText_name.getText().toString()
+//                                +"&email="+editText_email.getText().toString()
+//                                +"&pass="+editText_pass.getText().toString()
+//                                +"&pin="+editText_pin.getText().toString(), new Response.Listener<String>() {
+//
+//                    @Override
+//                    public void onResponse(String response) {
+//
+//                            if(response.equals("1")){
+//                                Toast.makeText(RegisterActivity.this, "Registration Successful", Toast.LENGTH_SHORT).show();
+//                                startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+//                                finish();
+//                            }
+//                        progressBar.setVisibility(View.GONE);
+//
+//
+//                        Log.d("Login response: ", response.toString());
+////                        pDialog.hide();
+//
+//                    }
+//                }, new Response.ErrorListener() {
+//
+//                    @Override
+//                    public void onErrorResponse(VolleyError error) {
+//                        VolleyLog.d("Error: " , error.getMessage());
+//                        progressBar.setVisibility(View.GONE);
+////                        pDialog.hide();
+//                    }
+//                });
+//
+//// Adding request to request queue
+//                AppController.getInstance().addToRequestQueue(strReq, tag_string_req);
             }
         });
         editText_pass.addTextChangedListener(new TextWatcher() {
