@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@android:color/white"
+        android:layout_marginTop="80dp">
+
+        <EditText
+            android:id="@+id/editText_forgot_username"
+            android:textSize="18sp"
+            android:hint="Username or Password"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="280dp"
+            android:layout_height="match_parent"
+            android:inputType="textPersonName"
+            android:padding="10dp"/>
+    </android.support.design.widget.TextInputLayout>
+    <Button
+        android:layout_width="280dp"
+        android:id="@+id/button_forgot_submit"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:background="@drawable/box_heading"
+        android:text="Submit"
+        android:textSize="18sp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="150dp"
+        android:fontFamily="@font/raleway"/>
+</android.support.design.widget.CoordinatorLayout>

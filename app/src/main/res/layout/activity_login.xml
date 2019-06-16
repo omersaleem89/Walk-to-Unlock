@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <ImageView
+        android:padding="15dp"
+        android:src="@mipmap/ic_launcher_round"
+        android:id="@+id/textView"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="50dp" />
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/box"
+        android:layout_marginTop="180dp"
+        >
+
+        <EditText
+            android:id="@+id/editText_name"
+            android:textSize="18sp"
+            android:hint="Username or Email"
+            android:textColorHint="@color/colorText"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="280dp"
+            android:layout_height="match_parent"
+            android:inputType="textPersonName"
+            android:padding="15dp"/>
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/box"
+        android:layout_marginTop="260dp">
+
+        <EditText
+            android:id="@+id/editText_password"
+            android:textSize="18sp"
+            android:hint="Password"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:textColorHint="@color/colorText"
+            android:padding="15dp"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/button_login"
+        android:layout_width="280dp"
+        android:layout_height="52dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="350dp"
+        android:background="@drawable/box_heading"
+        android:fontFamily="@font/raleway"
+        android:text="Login"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        />
+
+    <TextView
+        android:id="@+id/textView_login_forgot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="420dp"
+        android:text="FORGOT PASSWORD?"
+        android:fontFamily="@font/raleway"
+        android:textAlignment="center"
+        android:textColor="@color/colorText" />
+    <TextView
+        android:id="@+id/textView_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="450dp"
+        android:textSize="22sp"
+        android:text="REGISTER NOW!"
+        android:fontFamily="@font/raleway"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary" />
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp">
+    <TextView
+        android:textSize="17sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="- Make sure your internet and location is ON"
+        android:fontFamily="@font/raleway"/>
+    <TextView
+        android:textSize="17sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="- Login/Sign Up and enter/set PIN"
+        android:fontFamily="@font/raleway"/>
+    <TextView
+        android:textSize="17sp"
+        android:typeface="serif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="- Give the distance restriction in kilo meters against app/game you want to lock"
+        android:fontFamily="@font/raleway"/>
+    <TextView
+        android:textSize="17sp"
+        android:typeface="serif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="- Lock the Desired App/Game"
+        android:fontFamily="@font/raleway"/>
+    <TextView
+        android:textSize="17sp"
+        android:typeface="serif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="- Close app and give mobile phone to your kid"
+        android:fontFamily="@font/raleway"/>
+    <TextView
+        android:textSize="17sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="- This app requires open air in order to track distance"
+        android:fontFamily="@font/raleway"/>
+    <TextView
+        android:textSize="17sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="- You can also manually unlock apps by entering PIN"
+        android:fontFamily="@font/raleway"/>
+    <TextView
+        android:textSize="17sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="- You can also check history of your child"
+        android:fontFamily="@font/raleway"/>
+
+</LinearLayout>

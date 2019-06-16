@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="100"
+        android:layout_margin="5dp"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        >
+    <ImageView
+        android:id="@+id/app_icon"
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:layout_gravity="start"
+        android:layout_weight="75"
+        />
+
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/lockApp"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="30"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:fontFamily="@font/raleway"
+            android:textColor="@color/colorText" />
+    <EditText
+        android:id="@+id/editText_distance"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:hint="0 meter"
+        android:inputType="number"
+        android:textColor="@color/colorText"
+        android:fontFamily="@font/raleway"/>
+    </LinearLayout>
+</RelativeLayout>
